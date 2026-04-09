@@ -1,0 +1,526 @@
+@charset "UTF-8";
+
+
+
+/* @FONT FACE (enable the use of 'custom fonts' inside your document) */
+
+/* 
+  You can use 'fontsquirrel' (https://www.fontsquirrel.com) 
+  or 'transfonter' (https://transfonter.org)
+  to generate your own font for the web from .ttf or .oft files 
+*/
+
+@font-face {
+    font-family: 'Apolline';
+    src: url('../fonts/Apolline/Apolline-Regular.woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'Apolline Italic';
+    src: url('../fonts/Apolline/Apolline-Italic.woff2');
+    font-weight: Italic;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto/Roboto-Regular.woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'Roboto Bold';
+    src: url('../fonts/Roboto/Roboto-Bold.woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: block;
+}
+
+:root {
+  /* Color values */
+  --color-background: rgba(255,255,255,1);
+  --color-text: rgba(0,0,0,1);
+  --color-text-link: rgba(0,0,255,0.8);
+  --color-text-link-hover: rgba(0,0,255,0.4);
+  /* Font values */
+  --font-text: 'Apolline', 'Helvetica', 'Arial', sans-serif;
+  --font-size: 24px;
+  /* Margin values */
+  --margin: 150px;
+
+
+  /* Examples of possible variables */
+
+  --font-size-heading: calc(var(--font-size) * 2);
+  --font-size-subheading: calc(var(--font-size) * 1.25);
+  --font-size-caption: calc(var(--font-size) * 0.875);
+
+  --margin-xs: calc(var(--margin) * 0.5);
+  --margin-s: calc(var(--margin) * 1);
+  --margin-m: calc(var(--margin) * 2);
+  --margin-l: calc(var(--margin) * 3);
+  --margin-xl: calc(var(--margin) * 5);
+
+}
+
+
+
+/* GENERAL STYLES */
+
+html {
+  font: var(--font-size) var(--font-family);
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+body {
+  background-color: var(--color-background);
+  font: var(--font-size) var(--font-family);
+  color: var(--color-text);
+  width:100%;
+  height:auto;
+  overflow-y:auto;
+  margin-top: 0;
+}
+
+a {
+  color: var(--color-text-link);
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--color-text-link-hover);
+  text-decoration: underline;
+}
+
+
+h1{
+  /* h1 style */
+  font-family: 'Roboto Bold';
+  font-size: clamp(
+    var(--font-size-heading),
+    4vw,
+    calc(var(--font-size-heading) * 1.25)
+  );
+}
+
+h2{
+  font-family: 'Roboto Bold';
+  font-size: clamp(
+    var(--font-size-heading),
+    10px,
+    calc(var(--font-size-heading) * 1.25)
+  );
+  text-align:center;
+  margin-bottom: 10px;
+  margin-top: 100px;
+}
+
+h3{
+   font-family: 'Apolline';
+   font-size: 30pt;
+  text-align:center;
+  margin-top: 10px;
+}
+
+h4, h5, h6{
+  font-family: 'Apolline';
+   font-size: 30pt;
+  text-align:center;
+  margin-top: 150px;
+  /* h4-h5-h6 style */
+}
+
+p {
+  font-family: 'Apolline';
+  text-align: justify;
+  font-size: 20px;
+  text-align: justify;
+  hyphens: auto;
+  overflow-wrap: break-word;
+
+  max-width: 65ch;              
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--margin-xs);
+  padding-right: var(--margin-xs);
+  margin-bottom: 100px;
+  margin-top: 50px;
+}
+
+ol, ul{
+  /* ordered list and unordered list styles */
+}
+
+blockquote{
+  /* blockquote element style */
+}
+
+hr{
+  /* horizontal rule style */
+}
+
+
+
+/* PAGE STYLES */
+
+
+
+
+/* Style the navbar */
+
+
+
+
+/* Page content */
+.content {
+  padding: 16px;
+}
+
+.bg {
+  width:max-content;
+  height:auto;
+}
+
+
+
+
+
+
+
+div.page-wrapper {
+  /* the element that 'wraps' everything */
+  padding: var(--margin);
+}
+
+/* navigation */
+ 
+nav{
+  
+}
+
+/* content */
+
+main{
+ 
+}
+
+summary{
+  
+}
+.landing-page{
+  top:0;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  margin-bottom: -50px;
+  
+}
+
+/* Dropdown Menu Styles */
+.dropdown-container {
+  position: fixed;
+  left: 50px;
+  top: 50px;
+  width: 350px;
+  z-index: 1000;
+}
+
+.dropdown-toggle {
+  width: 100%;
+  height: auto;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: block;
+}
+
+.dropdown-toggle img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.dropdown-toggle:hover img {
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 150px;
+  left: 0;
+  min-width: 150px;
+  z-index: 1001;
+}
+
+.dropdown-menu.active {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-item {
+  color: var(--color-text);
+  padding: 0;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  transition: opacity 0.3s ease;
+  margin: 0;
+}
+
+.dropdown-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 5px;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-item:hover {
+  opacity: 0.8;
+}
+
+.to-top{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 70px;
+  margin-top: 30px;
+}
+
+
+
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0px;
+  left: 50px;
+}
+
+/* Create three equal columns that sit next to each other */
+.column {
+  flex: 0 0 33.333%;
+  max-width: 33.333%;
+  padding: 0 10px;
+  box-sizing: border-box;
+  margin-bottom: 100px;
+}
+
+.column img {
+  margin-top: 20px;
+  vertical-align:middle;
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+
+.scroll-container {
+  
+  overflow: auto;
+  white-space: nowrap;
+  margin: 50px 0;
+  width: 100%;
+}
+
+
+.scroll-container img {
+  padding: 0px;
+}
+
+
+/* UTILITY CLASSES */
+
+/* hide desktop mobile etc */
+
+.desktop-only {
+  display: block;
+}
+
+.mobile-only {
+  display: none;
+}
+
+
+.row2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: around;
+  gap: 10px;
+  margin: 0 auto;
+}
+
+.column2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  flex: 0 1 auto;
+}
+
+
+/* WEBSITE MEDIA QUERIES */
+
+/* responsive typeface for various breaking points, sets the default 'rem' value */
+@media (max-width: 299px) { :root{--font-size: 18px;} html, body {font: var(--font-size) var(--font-text); } }
+@media (min-width: 299px) and (max-width: 340px) { :root{--font-size: 19px;} html, body {font: var(--font-size) var(--font-text); } }
+@media (min-width: 340px) and (max-width: 440px) { :root{--font-size: 20px;} html, body {font: var(--font-size) var(--font-text); } }
+@media (min-width: 441px) and (max-width: 779px) { :root{--font-size: 19px;} html, body {font: var(--font-size) var(--font-text); } }
+@media (min-width: 780px) and (max-width: 992px) { :root{--font-size: 20px;} html, body {font: var(--font-size) var(--font-text); } }
+@media (min-width: 993px) and (max-width: 1200px) { :root{--font-size: 21px;} html, body {font: var(--font-size) var(--font-text); } }
+@media (min-width: 1201px) and (max-width: 1320px) { :root{--font-size: 22px;} html, body {font: var(--font-size) var(--font-text); } }
+@media (min-width: 1321px) { :root{--font-size: 24px;} html, body {font: var(--font-size) var(--font-text); } }
+
+/* styles for 'mobile', screen sizes up to 779px, should covers 'mobile' and 'tablet' */
+/* style this one first and then use the subsequent ones in a cascading way (from general to specific) */
+
+@media (max-width: 779px) {
+  /* your 'mobile' overriding css properties here */
+
+div.page-wrapper {
+  /* the element that 'wraps' everything */
+   padding: var(--margin-xs); 
+ 
+}
+
+.column {
+  flex: 100%;
+  max-width: 100%;
+}
+}
+
+
+
+#navbar {
+  display:flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  position: sticky;
+  overflow: hidden;
+  z-index: 10;
+ 
+}
+
+#navbar a {
+  width:16vw;
+}
+
+#navbar a img{
+  display:flex;;
+  width: 60%;
+  height:auto;
+}
+
+p {
+    max-width: 90%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+
+
+ .image-one{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+  max-width: 300px;
+  flex-wrap: nowrap;
+  margin-top: -300px;
+}
+
+  /* utility classes, mobile */
+
+  .desktop-only{
+    display:none;
+  }
+
+  .mobile-only{
+    display:block;
+  }
+
+
+@media (min-width: 1200px) {
+  p {
+    max-width: 75ch;
+    padding-left: var(--margin-s);
+    padding-right: var(--margin-s);
+  }
+
+   .column {
+    flex: 25%;
+    max-width: 25%;
+  }
+
+.dropdown-container {
+    width: 300px;
+    left: 100px;
+  }
+
+}
+
+
+/* use this query to apply style changes to smaller smartphones sizes (like an iPhone 5S or SE 2016), max size of 339px */
+
+@media (max-width: 339px) {
+
+  /* your overriding css properties here */
+
+ .dropdown-container {
+    width: 100px;
+    height: auto;
+    left: 50px;
+  }
+  
+
+}
+
+
+
+/* use this query to apply style changes for 'mobile' screen sizes that are flipped in 'landscape' mode */
+
+@media (max-width: 779px) and (orientation: landscape) {
+
+   /* your overriding css properties here */
+
+.dropdown-container {
+    width: 200px;
+    left: 30px;
+  }
+ 
+}
+
+
+
+/* use this query to apply style for 'small' desktop screens */
+
+@media (min-width: 780px) and (max-width: 992px) {
+
+  /* your overriding css properties here */
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+
+.dropdown-container {
+    width: 250px;
+    left: 40px;
+  }
+
+}
+
+
+
